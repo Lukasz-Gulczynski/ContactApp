@@ -35,14 +35,14 @@ const MODALS: { [name: string]: Type<any> } = {
 })
 export class HomeLoggedUserComponent implements OnInit {
   closeResult = '';
-  contactsList: any = [];
+  contactsList: any = []
   constructor(private router: Router, private modalService: NgbModal,
     private toastr: ToastrService, private httpProvider : HttpProviderService) { }
 
-  ngOnInit(): void {
-    this.getAllContacts();
+  ngOnInit(): any {
+    this.getContacts();
   }
-  async getAllContacts() {
+  async getContacts() {
     this.httpProvider.getContacts().subscribe((data : any) => {
       if (data != null && data.body != null) {
         var resultData = data.body;
@@ -62,7 +62,7 @@ export class HomeLoggedUserComponent implements OnInit {
       });
   }
 
-  CreateContact() {
+  createContact() {
     this.router.navigate(['CreateContact']);
   }
 
@@ -82,7 +82,7 @@ export class HomeLoggedUserComponent implements OnInit {
         var resultData = data.body;
         if (resultData != null && resultData.isSuccess) {
           this.toastr.success(resultData.message);
-          this.getAllContacts();
+          this.getContacts();
         }
       }
     },

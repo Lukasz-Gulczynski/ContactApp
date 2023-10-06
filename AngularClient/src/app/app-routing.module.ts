@@ -9,6 +9,8 @@ import { AddContactComponent } from './add-contact/add-contact.component';
 import { DeleteContactComponent } from './delete-contact/delete-contact.component';
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { HomeLoggedUserComponent } from './home-logged-user/home-logged-user.component';
 
 const routes: Routes = [
   {
@@ -17,8 +19,6 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: SecretComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -30,7 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'addContact',
-    component: AddContactComponent
+    component: SecretComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'removeContact',
@@ -44,6 +45,10 @@ const routes: Routes = [
     path: 'updateContact/:contactId',
     component: UpdateContactComponent
   },
+  {
+    path: 'getAllContacts',
+    component: HomeLoggedUserComponent
+  }
 ];
 
 @NgModule({

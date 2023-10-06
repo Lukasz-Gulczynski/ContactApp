@@ -1,7 +1,8 @@
 import { AuthenticationService } from './../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
+import { HomeLoggedUserComponent } from '../home-logged-user/home-logged-user.component';
 import { Observable } from 'rxjs';
-import { ContactsClient } from '../clients/contacts.client';
+import { AddContactComponent } from '../add-contact/add-contact.component';
 
 @Component({
   selector: 'app-secret',
@@ -9,11 +10,12 @@ import { ContactsClient } from '../clients/contacts.client';
   styleUrls: ['./secret.component.css'],
 })
 export class SecretComponent implements OnInit {
-  public contacts: Observable<any> = this.contactsClient.getAllContacts();
+  public contacts: Promise<any> = this.homeLoggedUser.getContacts();
+  public createContact: void = this.homeLoggedUser.createContact();
   
   constructor(
     private authenticationService: AuthenticationService,
-    private contactsClient: ContactsClient
+    private homeLoggedUser: HomeLoggedUserComponent,
   ) {}
 
   ngOnInit(): void {}

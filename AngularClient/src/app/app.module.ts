@@ -22,6 +22,8 @@ import { DeleteContactComponent } from './delete-contact/delete-contact.componen
 import { UpdateContactComponent } from './update-contact/update-contact.component';
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { HomeLoggedUserComponent } from './home-logged-user/home-logged-user.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { HomeLoggedUserComponent } from './home-logged-user/home-logged-user.com
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-
+    NgbModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
