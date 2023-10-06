@@ -1,0 +1,133 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>New Contact</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/homeLoggedUser" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                 Back</a>
+            </div>
+          </div>
+        </div>
+        <form #employeeForm="ngForm">
+          <div class="table-content">
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="Name" class="p-t-b-10"> Name<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Name" required maxlength="255"
+                  [(ngModel)]="createContactForm.Name" name="Name" #Name="ngModel">
+                <div *ngIf="Name.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Name.errors?.['required']">
+                    Name is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="Surname" class="p-t-b-10">Surname<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Surname" required maxlength="255"
+                  [(ngModel)]="createContactForm.Surname" name="Surname" #Surname="ngModel">
+                <div *ngIf="Surname.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Surname.errors?.['required']">
+                    Surname is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">Email<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Email" required maxlength="255"
+                  [(ngModel)]="createContactForm.Email" name="Email" #Email="ngModel"
+                  pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9]{2,3}$">
+                <div *ngIf="Email.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Email.errors?.['required']">
+                    Email is required
+                  </div>
+                  <div [hidden]="!Email.errors?.['touched'] && !Email.errors?.['pattern']">
+                    Email is invalid
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label class="p-t-b-10">Password<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="Password" required maxlength="255"
+                    [(ngModel)]="createContactForm.Password" name="Password" #Password="ngModel"
+                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9]{2,3}$">
+                  <div *ngIf="Password.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!Password.errors?.['required']">
+                        Password is required
+                    </div>
+                    <div [hidden]="!Password.errors?.['touched'] && !Password.errors?.['pattern']">
+                        Password is invalid
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">Birthdate<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <textarea class="form-control" id="Birthdate" required [(ngModel)]="createContactForm.Birthdate" name="Birthdate"
+                  #Birthdate="ngModel">></textarea>
+                <div *ngIf="Birthdate.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Birthdate.errors?.['required']">
+                    Birthdate is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">PhoneNumber<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="PhoneNumber" required maxlength="10"
+                  [(ngModel)]="createContactForm.PhoneNumber" name="PhoneNumber" #PhoneNumber="ngModel" pattern="^\d{3}\d{3}\d{4}$">
+                <div *ngIf="PhoneNumber.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!PhoneNumber.errors?.['required']">
+                    PhoneNumber is required
+                  </div>
+                  <div [hidden]="!PhoneNumber.errors?.['touched'] && !PhoneNumber.errors?.['pattern']">
+                    PhoneNumber is invalid
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+                <div class="col-sm-3">
+                  <label class="p-t-b-10">CategoryName<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                  <textarea class="form-control" id="Birthdate" required [(ngModel)]="createContactForm.CategoryName" name="CategoryName"
+                    #CategoryName="ngModel">></textarea>
+                  <div *ngIf="CategoryName.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!CategoryName.errors?.['required']">
+                        CategoryName is required
+                    </div>
+                  </div>
+                </div>
+          </div>
+          </div>
+          <div class="table-footer">
+            <button class="btn btn-success" (click)="CreateContact(contactForm.form.valid)">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Contacts</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Contact Id</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>PhoneNumber</th>
+          <th>Birthdate</th>
+          <th>CategoryName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{contact.Name}}</td>
+          <td>{{contact.Surname}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.Password}}</td>
+          <td>{{contact.PhoneNumber}}</td>
+          <td>{{contact.Birthdate}}</td>
+          <td>{{contact.CategoryName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

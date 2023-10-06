@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Contacts Names</h2>
+    <table class='table table-striped' aria-labelledby="tableLabel"
+        *ngIf="contactsNames">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Contact Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contactName of contactsNames; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{contactName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

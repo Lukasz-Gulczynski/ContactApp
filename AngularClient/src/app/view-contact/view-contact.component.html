@@ -1,0 +1,48 @@
+<div class=”container-xl”>
+    <div class=”table-responsive”>
+      <div class=”table-wrapper”>
+        <div class=”table-title”>
+          <div class=”row”>
+            <div class=”col-sm-6”>
+              <h4><b>View Contact</b></h4>
+            </div>
+            <div class=”col-sm-6”>
+              <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-lef'></i>  Back</a>
+            </div>
+          </div>
+        </div>       
+        <table class="table table-striped table-hover table-bordered table-conten">
+          <tbody>
+            <tr>
+              <td><label><b>Name</b></label></td>
+              <td><span>{{ contactDetail.firstName }}</span></td>
+            </tr>
+            <tr>
+              <td><label><b>Last Name</b></label> </td>
+              <td><span>{{ contactDetail.surname }}</span></td>
+            </tr>
+            <tr>
+              <td> <label><b>Email</b></label></td>
+              <td> <span>{{ contactDetail.email }}</span></td>
+            </tr>
+            <tr>
+              <td> <label><b>Address</b></label></td>
+              <td><span>{{ contactDetail.password }}</span></td>
+            </tr>
+            <tr>
+              <td> <label><b>Phone Number</b></label></td>
+              <td> <span>{{ contactDetail.phoneNumber }}</span></td>
+            </tr>
+            <tr>
+                <td> <label><b>Birthdate</b></label></td>
+                <td> <span>{{ contactDetail.Birthdate }}</span></td>
+            </tr>
+            <tr>
+                <td> <label><b>Category Name</b></label></td>
+                <td> <span>{{ contactDetail.categoryName }}</span></td>
+            </tr>
+          </tbody>
+        </table>       
+      </div>
+    </div>
+  </div>
